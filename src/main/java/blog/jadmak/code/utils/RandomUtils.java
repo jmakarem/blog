@@ -18,9 +18,9 @@ public class RandomUtils {
         int rightLimit = 'z';
         Random random = new Random();
 
-        return new ArrayList<>(IntStream.range(0,number).mapToObj(it -> random.ints(leftLimit, rightLimit + 1)
+        return IntStream.range(0,number).mapToObj(it -> random.ints(leftLimit, rightLimit + 1)
                 .limit(size)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .toString()).toList());
+                .toString()).toList();
     }
 }
